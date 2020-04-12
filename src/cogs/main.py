@@ -60,6 +60,16 @@ class Main(commands.Cog):
                     url="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/earth.png")
                 await ctx.channel.send(embed=embed)
 
+    @commands.command(aliases=['devs', 'developer', 'about'])
+    async def developers(self, ctx):
+        embed = discord.Embed(
+            title="COVID-19.Tracker", description="**About**", color=0x00ff00)
+        embed.add_field(
+            name="Developer (ask any questions <3)", value="edward#5274", inline=True)
+        embed.add_field("Other Bot", value"RetroBot, https://github.com/pasenidis/retrobot")
+        embed.set_footer(text="https://covidtrack.tk")
+        await ctx.channel.send(embed=embed)
+
 
 def setup(bot):
     bot.add_cog(Main(bot))
