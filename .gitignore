@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # Bot credentials
-/src/credentials.txt
+/credentials.txt
