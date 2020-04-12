@@ -9,6 +9,7 @@ class Main(commands.Cog):
 
     @commands.command()
     async def country(self, ctx, arg):
+        """Usage: command <country> | Response: Pandemic-related info bout the specific country"""
         print(f'Fetching country: {arg}')
         async with aiohttp.ClientSession() as cs:
             async with cs.get(f'https://corona.lmao.ninja/countries/{arg}') as r:
@@ -35,6 +36,7 @@ class Main(commands.Cog):
 
     @commands.command(aliases=['worldwide', 'all'])
     async def world(self, ctx):
+        """Usage: command | This command gives worldwide statistics about the infection."""
         print(f'Fetching worldwide stats')
         async with aiohttp.ClientSession() as cs:
             async with cs.get(f'https://corona.lmao.ninja/countries/World') as r:
