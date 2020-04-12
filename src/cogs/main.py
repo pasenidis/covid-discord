@@ -66,9 +66,9 @@ class Main(commands.Cog):
         embed = discord.Embed(
             title="COVID-19.Tracker", description="**About**", color=0x00ff00)
         embed.add_field(
-            name="Developer (ask any questions <3)", value="edward#5274", inline=True)
+            name="Developer (ask any questions <3)", value="edward#5274", inline=False)
         embed.add_field(
-            "Other Bot", value="RetroBot, https://github.com/pasenidis/retrobot")
+            "Other Bot", value="RetroBot, https://github.com/pasenidis/retrobot", inline=False)
         embed.set_footer(text="https://covidtrack.tk")
         await ctx.channel.send(embed=embed)
 
