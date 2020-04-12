@@ -62,11 +62,13 @@ class Main(commands.Cog):
 
     @commands.command(aliases=['devs', 'developer', 'about'])
     async def developers(self, ctx):
+        """Gives information about the man who created that bot!"""
         embed = discord.Embed(
             title="COVID-19.Tracker", description="**About**", color=0x00ff00)
         embed.add_field(
             name="Developer (ask any questions <3)", value="edward#5274", inline=True)
-        embed.add_field("Other Bot", value"RetroBot, https://github.com/pasenidis/retrobot")
+        embed.add_field(
+            "Other Bot", value="RetroBot, https://github.com/pasenidis/retrobot")
         embed.set_footer(text="https://covidtrack.tk")
         await ctx.channel.send(embed=embed)
 
