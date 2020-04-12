@@ -11,7 +11,6 @@ Coming Soon:tm:
 - [ ] Auto updates on specific events
 
 ## Downloading
-I created this bot to give my a server a custom bot, although you can do whatever the GPLv3 license allows you to do, including creating your own version of it.
 To begin, just open a terminal and type in:
 ```bash
 git clone https://github.com/pasenidis/covid-discord.git
@@ -21,7 +20,6 @@ code .
 atom .
 # or just use your favorite IDE!
 ```
-Now, you should open bot.py and start modifying.
 Also create a credentials.txt with your token inside, that's safer than having it in bot.py in case you upload it online.
 
 ## FAQ
