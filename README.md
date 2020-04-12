@@ -11,7 +11,7 @@ Coming Soon:tm:
 - [ ] Auto updates on specific events
 
 ## Downloading
-I created retrobot to give my a server a custom bot, although you can do whatever the GPLv3 license allows you to do, including creating your own version of it.
+I created this bot to give my a server a custom bot, although you can do whatever the GPLv3 license allows you to do, including creating your own version of it.
 To begin, just open a terminal and type in:
 ```bash
 git clone https://github.com/pasenidis/covid-discord.git
