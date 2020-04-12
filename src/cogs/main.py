@@ -33,7 +33,7 @@ class Main(commands.Cog):
                 # url=f"https://www.countryflags.io/{request.get('countryInfo').get('iso2')}/shiny/64.png")
                 await ctx.channel.send(embed=embed)
 
-    @commands.command()
+    @commands.command(aliases=['world', 'all', 'every'])
     async def world(self, ctx):
         print(f'Fetching worldwide stats')
         async with aiohttp.ClientSession() as cs:
