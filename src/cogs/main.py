@@ -9,7 +9,7 @@ class Main(commands.Cog):
 
     @commands.command()
     async def country(self, ctx, arg):
-        """Usage: command <country> | Response: Pandemic-related info bout the specific country"""
+        """Usage: command <country>"""
         print(f'Fetching country: {arg}')
         async with aiohttp.ClientSession() as cs:
             async with cs.get(f'https://corona.lmao.ninja/countries/{arg}') as r:
@@ -34,9 +34,35 @@ class Main(commands.Cog):
                 # url=f"https://www.countryflags.io/{request.get('countryInfo').get('iso2')}/shiny/64.png")
                 await ctx.channel.send(embed=embed)
 
+    @commands.command(aliases=['states', 'state'])
+    async def usa(self, ctx, *, arg):
+        """Usage: command <state>"""
+        print(f'Fetching state: {arg}')
+        async with aiohttp.ClientSession() as cs:
+            async with cs.get(f'https://corona.lmao.ninja/states/{arg}') as r:
+                request = await r.json()
+                embed = discord.Embed(
+                    title="COVID-19.Tracker", description=f"**{request.get('state')}**", color=0x00ff00)
+                embed.add_field(
+                    name="Cases", value=request.get('cases'), inline=True)
+                embed.add_field(
+                    name="Today Cases", value=request.get('todayCases'), inline=True)
+                embed.add_field(
+                    name="Recovered", value=request.get('recovered'), inline=True)
+                embed.add_field(
+                    name="Critical", value=request.get('critical'), inline=True)
+                embed.add_field(
+                    name="Deaths", value=request.get('deaths'), inline=True)
+                embed.add_field(
+                    name="Today Deaths", value=request.get('todayDeaths'), inline=True)
+                embed.set_footer(text="https://covidtrack.tk")
+                # embed.set_thumbnail(
+                # url=f"https://www.countryflags.io/{request.get('countryInfo').get('iso2')}/shiny/64.png")
+                await ctx.channel.send(embed=embed)
+
     @commands.command(aliases=['worldwide', 'all'])
     async def world(self, ctx):
-        """Usage: command | This command gives worldwide statistics about the infection."""
+        """Usage: command"""
         print(f'Fetching worldwide stats')
         async with aiohttp.ClientSession() as cs:
             async with cs.get(f'https://corona.lmao.ninja/countries/World') as r:
