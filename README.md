@@ -1,4 +1,6 @@
 # COVID-19.Tracker: Discord Edition
+This project is maintained by @pasenidis
+_________________________________________
 A minimalistic pandemic analysis bot.
 
 ## Screenshots
